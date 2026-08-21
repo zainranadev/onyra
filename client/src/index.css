@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-mist text-ink antialiased;
+}
+
+::selection {
+  @apply bg-orange/20;
+}
+
+/* Visible keyboard focus everywhere, without adding a ring to mouse clicks */
+:focus-visible {
+  outline: 2px solid #7C3AED;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.skeleton {
+  @apply relative overflow-hidden bg-black/5;
+  background-image: linear-gradient(90deg,
+      rgba(0, 0, 0, 0.04) 0px,
+      rgba(0, 0, 0, 0.09) 40px,
+      rgba(0, 0, 0, 0.04) 80px);
+  background-size: 800px 100%;
+  @apply animate-shimmer;
+}
+
+.container-page {
+  @apply mx-auto w-full max-w-[1320px] px-5 sm:px-8;
+}
+
+.input {
+  @apply w-full rounded-lg border border-black/10 bg-white px-3.5 py-2.5 text-sm text-ink outline-none transition-colors focus:border-purple;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Custom scrollbar — used inside modal form body ──────────────────────── */
+.modal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(139, 92, 246, 0.35) transparent;
+}
+
+.modal-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.modal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #8b5cf6, #d946ef);
+  border-radius: 99px;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #7c3aed, #c026d3);
+}
+
+/* ── Modal input focus — violet ring instead of purple ───────────────────── */
+.modal-input {
+  @apply w-full rounded-xl border border-black/10 bg-white/80 px-3.5 py-2.5 text-sm text-ink outline-none transition-all duration-200 focus:border-violet-400 focus:ring-2 focus:ring-violet-400/20;
+}
+
+.modal-input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
