@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Onyra — Premium Mini E-Commerce Web App
 
 A full-stack, portfolio-quality e-commerce application: a React/TypeScript storefront with an Express/MongoDB API behind it. Built as a demo store for a fictional brand (**Onyra** — considered, well-made everyday tech and carry goods).
@@ -158,3 +159,6 @@ There's no real login system yet (see below). Admin-only endpoints are gated by 
 ## Demo data note
 
 Product photography is sourced from Unsplash via hot-linked URLs for demo purposes — replace with your own CDN-hosted assets before shipping this for real.
+=======
+# onyra
+>>>>>>> 6df1f3fb0cd4f7b6d194079e4afc2d2697c7cda3
